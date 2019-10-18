@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F49DE83F-DDB3-45AE-A790-369814F68F4D}</ProjectGuid>
+    <ProjectGuid>{7C39316C-956B-4ECD-95AA-BA8C9FBB4593}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MatrixConception</RootNamespace>
-    <AssemblyName>MatrixConception</AssemblyName>
+    <RootNamespace>DAL.Interface</RootNamespace>
+    <AssemblyName>DAL.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,10 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiagonalMatrix.cs" />
-    <Compile Include="SquareMatrix.cs" />
+    <Compile Include="DTO\DalAccount.cs" />
+    <Compile Include="DTO\DalAccountOwner.cs" />
+    <Compile Include="DTO\IEntity.cs" />
+    <Compile Include="Repository\IAccountRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SymmetricMatrix.cs" />
+    <Compile Include="Repository\IOwnerRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ORM\ORM.csproj">
+      <Project>{7dd17cc7-2ef8-4232-b8a3-38662cf8b34a}</Project>
+      <Name>ORM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
